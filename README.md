@@ -21,5 +21,6 @@ npm run dev
 
 This will launch the web application and perform all necessary tasks to set up a fresh API.
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application running.
 
 ### Enjoy some memo test games 😼
