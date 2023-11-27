@@ -13,8 +13,14 @@ docker compose up
 
 This will basically get the posgres db running.
 
-After that run
 
+
+After that install turborepo in your system.
+```
+npm install turbo --global
+```
+
+Run the application.
 ```
 npm run dev
 ```
