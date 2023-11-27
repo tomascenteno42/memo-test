@@ -10,8 +10,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model MemoTest {
+  id        Int           @id @default(autoincrement())
+  name      String
+  images    String[]
+  createdAt DateTime      @default(now())
+  deletedAt DateTime?
+  sessions  TestSession[]
+}
+
+model TestSession {
+  id            Int              @id @default(autoincrement())
+  userId        String
+  memoTest      MemoTest         @relation(fields: [memoTestId], references: [id])
+  memoTestId    Int
+  retries       Int
+  numberOfPairs Int
+  state         TestSessionState
+  score         Int
+  cardsMatched  Int[]            @default([])
+  createdAt     DateTime         @default(now())
+  finishedAt    DateTime?
+}
+
+enum TestSessionState {
+  Started
+  Completed
 }

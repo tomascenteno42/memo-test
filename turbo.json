@@ -8,9 +8,19 @@
       "outputs": []
     },
     "dev": {
+      "dependsOn": ["db:generate", "db:push", "db:seed"],
       "cache": false
     },
     "test:ci": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "db:push": {
       "cache": false
     }
   }
