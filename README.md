@@ -15,9 +15,9 @@ This will basically get the posgres db running.
 
 
 
-After that install turborepo in your system.
+After that install dependencies
 ```
-npm install turbo --global
+npm install
 ```
 
 Run the application.
