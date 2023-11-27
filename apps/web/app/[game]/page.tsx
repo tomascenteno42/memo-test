@@ -91,9 +91,25 @@ export default function Game() {
     (matchedCardId?: number) => {
       takeTurnMutation({
         variables: { userId, memoTestId: data?.session.id, matchedCardId },
+      }).then(() => {
+        if (matchedCardId) {
+          client.writeQuery({
+            query: GET_SESSION_QUERY,
+            data: {
+              session: {
+                ...data?.session,
+                cardsMatched: [...data?.session?.cardsMatched, matchedCardId],
+              },
+            },
+            variables: {
+              id: sessionId,
+              userId,
+            },
+          });
+        }
       });
     },
-    [data?.session.id, takeTurnMutation, userId]
+    [client, data?.session, sessionId, takeTurnMutation, userId]
   );
 
   // User manually altering url
