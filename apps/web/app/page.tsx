@@ -8,6 +8,7 @@ import {
   Center,
   HStack,
   Heading,
+  Spinner,
   Stack,
   StackDivider,
   Text,
@@ -86,7 +87,12 @@ export default function Page() {
     [router]
   );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <Center bg={"background"} h="100%">
+        <Spinner color="accent" />
+      </Center>
+    );
   if (error) return <p>Error : {error.message}</p>;
   if (!data) return null;
 
