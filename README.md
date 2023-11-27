@@ -6,15 +6,17 @@
 
 To run the application, you must have Docker installed. You can download it from [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-Once Docker is running, execute the following command in the root path of the application:
-```
-docker compose up
-```
-
-This will basically get the posgres db running.
-
 > [!WARNING]
 > Create a `.env` file on `apps/api` path and copy the `.env.example` content in there. You are free to change the `DATABASE_URL` to any valid PostgreSQL connection string or just use the one in the `.env.example`
+
+Once Docker is running, execute the following command in the root path of the application. This runs docker compose on detached mode:
+```
+docker compose up -d
+```
+This will basically get the posgres db running.
+
+> [!NOTE]
+> If you don't want to run docker compose on detached mode, remove the `-d` flag. If you this you will have to open a new terminal to run the following commands.
 
 After that install dependencies
 ```
