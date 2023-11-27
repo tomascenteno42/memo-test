@@ -13,7 +13,8 @@ docker compose up
 
 This will basically get the posgres db running.
 
-
+> [!WARNING]
+> Create a `.env` file on `apps/api` path and copy the `.env.example` content in there. You are free to change the `DATABASE_URL` to any valid PostgreSQL connection string or just use the one in the `.env.example`
 
 After that install dependencies
 ```
