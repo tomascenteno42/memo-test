@@ -115,7 +115,7 @@ export const MemoTestGrid: FC<MemoTestGridProps> = ({
   return (
     <Center w="full" h="full" bg="background">
       <SimpleGrid
-        columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+        columns={{ base: 1, sm: 2, md: 3, lg: 6 }}
         spacing={4}
         justifyItems="center"
         justifyContent="center"

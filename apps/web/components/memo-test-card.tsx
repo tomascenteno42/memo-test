@@ -9,6 +9,9 @@ type MemoTestCardProps = {
   state: MemoTestCardState;
 };
 
+const IMAGE_WIDTH = 200;
+const IMAGE_HEIGHT = 250;
+
 export const MemoTestCard: FC<MemoTestCardProps> = ({
   idx,
   url,
@@ -21,8 +24,8 @@ export const MemoTestCard: FC<MemoTestCardProps> = ({
 
   return (
     <Card
-      w={100}
-      h={150}
+      w={IMAGE_WIDTH}
+      h={IMAGE_HEIGHT}
       _hover={
         isHidden && {
           opacity: 0.8,
@@ -33,8 +36,8 @@ export const MemoTestCard: FC<MemoTestCardProps> = ({
     >
       <CardBody p={1} bg="accent">
         <Image
-          w={100}
-          h={150}
+          w={IMAGE_WIDTH}
+          h={IMAGE_HEIGHT}
           src={url}
           alt="alt for url"
           borderRadius="lg"
